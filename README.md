@@ -7,12 +7,10 @@
 
   <!-- Badges -->
   <p>
-    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-    <img src="https://img.shields.io/badge/Font_Awesome-6.4.0-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white" alt="FontAwesome"/>
-    <img src="https://img.shields.io/badge/Responsive-Mobile_First-brightgreen?style=for-the-badge" alt="Responsive"/>
-    <img src="https://img.shields.io/badge/Status-Development-yellow?style=for-the-badge" alt="Status"/>
+   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
   </p>
 </div>
 
@@ -24,11 +22,9 @@
 - [✨ Key Features](#-key-features)
 - [🏗️ Technology Stack](#️-technology-stack)
 - [📁 Project Structure](#-project-structure)
-- [🎨 Design & Architecture](#-design--architecture)
 - [🚀 Getting Started](#-getting-started)
 - [🧩 Module Breakdown](#-module-breakdown)
 - [🔮 Production Readiness](#-production-readiness)
-- [📱 Viva Guide](#-viva-guide)
 - [📄 License & Contact](#-license--contact)
 
 ---
@@ -43,7 +39,7 @@
 - 📊 Access medical history, reports, and prescriptions
 - 🏥 Manage hospital operations (Admin, Pharmacy, Lab, Billing)
 
-The platform features **six distinct portals** (Patient, Doctor, Admin, Pharmacy, Lab, Billing) ensuring tailored experiences for every user role. Built with vanilla HTML, CSS, and JavaScript, it demonstrates a modular, scalable, and production-ready frontend architecture.
+The platform features **six distinct portals** (Patient, Doctor, Admin, Pharmacy, Lab, Billing) ensuring tailored experiences for every user role. Built with HTML, CSS, Django and MongoDB it demonstrates a modular, scalable, and production-ready frontend architecture.
 
 ---
 
@@ -64,7 +60,6 @@ The platform features **six distinct portals** (Patient, Doctor, Admin, Pharmacy
 - **Ward Management:** Bed availability (ICU/General/Cabin)
 
 ### 🎨 UI/UX Excellence
-- **Mobile-First Design:** Flawless experience across all devices
 - **Smooth Animations:** Hover effects, modal transitions, loading states
 - **Toast Notifications:** Real-time feedback system
 - **Accessibility:** Semantic HTML, ARIA labels, keyboard navigation
@@ -75,10 +70,10 @@ The platform features **six distinct portals** (Patient, Doctor, Admin, Pharmacy
 
 | Category | Technologies |
 |----------|-------------|
-| **Frontend** | HTML5, CSS3, JavaScript (Vanilla ES6+) |
+| **Frontend** | HTML5, CSS3 |
 | **Icons & Fonts** | Font Awesome 6.4.0, Google Fonts |
 | **Styling** | CSS Custom Properties, Flexbox, CSS Grid |
-| **Architecture** | Modular, Component-Based, Mobile-First |
+| **Architecture** | Modular, Component-Based |
 | **State Management** | localStorage, Session Storage |
 | **Performance** | Lazy Loading, Optimized Assets |
 
@@ -114,89 +109,6 @@ medfind/
 
 ---
 
-## 🎨 Design & Architecture
-
-### CSS Architecture (Modular Approach)
-
-```css
-/* base.css - Global Foundation */
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --success-color: #27ae60;
-    --error-color: #e74c3c;
-    --font-main: 'Inter', sans-serif;
-    --transition-speed: 0.3s;
-}
-
-/* layout.css - Structural Layouts */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* components.css - Reusable UI Elements */
-.card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform var(--transition-speed);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* animations.css - Dynamic Effects */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* responsive.css - Breakpoints */
-@media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
-}
-```
-
-### JavaScript Architecture (ES6 Modules)
-
-```js
-// main.js - Application Core
-import { initLocation }    from './location.js';
-import { initAuth }        from './auth.js';
-import { showNotification } from './notification.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    initLocation();
-    initAuth();
-    setupEventListeners();
-});
-
-// location.js - Location Management
-export function initLocation() {
-    const citySelect = document.getElementById('city');
-    const areaSelect = document.getElementById('area');
-
-    citySelect.addEventListener('change', async (e) => {
-        const areas = await fetchAreas(e.target.value);
-        populateAreas(areas);
-        localStorage.setItem('selectedCity', e.target.value);
-    });
-}
-
-// notification.js - Toast System
-export function showNotification(message, type = 'info') {
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.textContent = message;
-    toast.style.animation = 'slideIn 0.3s ease';
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-}
-```
-
 ### UI/UX Principles
 
 - **Consistency:** Unified color palette and spacing via CSS Custom Properties
@@ -210,7 +122,7 @@ export function showNotification(message, type = 'info') {
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Edge, Safari)
+- A modern web browser (Chrome, Firefox, Edge, Safari, Brave)
 - Python 3 (or any static file server) for local development
 
 ### Installation
@@ -256,7 +168,7 @@ python -m http.server 8000
 
 To evolve MEDFIND into a production system, the following enhancements are recommended:
 
-- **Backend Integration:** REST API (Node.js/Django) with a relational database (PostgreSQL)
+- **Backend Integration:** Django and MongoDB
 - **Authentication:** JWT-based auth with role-based access control (RBAC)
 - **Real-Time Features:** WebSockets for live appointment updates and chat
 - **Testing:** Unit tests (Jest) and end-to-end tests (Playwright/Cypress)
@@ -265,17 +177,6 @@ To evolve MEDFIND into a production system, the following enhancements are recom
 
 ---
 
-## 📱 Viva Guide
-
-Key talking points for demonstrating MEDFIND:
-
-1. **Architecture Decision:** Why vanilla JS over a framework — zero build overhead, demonstrates core web fundamentals
-2. **Modular CSS:** How CSS Custom Properties enable consistent theming across all modules
-3. **Role Separation:** How the portal structure isolates concerns between user types
-4. **Scalability Path:** How the module structure maps directly onto future REST API endpoints
-5. **Accessibility:** Point to semantic HTML and ARIA usage in forms and modals
-
----
 
 ## 📄 License & Contact
 
